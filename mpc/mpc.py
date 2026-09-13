@@ -334,7 +334,7 @@ class MPC(Module):
                 u = u*Iu + u.clone().detach()*(1.-Iu)
 
         costs = best['costs']
-        return (x, u, costs)
+        return (x, u, costs, i)
 
     def solve_lqr_subproblem(self, x_init, C, c, F, f, cost, dynamics, x, u,
                              no_op_forward=False):
